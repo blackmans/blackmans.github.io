@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/07/21/git学习总结/index.html">
 <meta property="og:site_name" content="诸葛小群">
 <meta property="og:description" content="参考：http://git-scm.com/book/zh/v1 2-4章第二章  第一节 获取git仓库创建一个git仓库，两种方法：123456第一种：直接在所要创建的文件夹中执行git init命令，这时就创建了一个git仓库，但是并没有实际的管理任何 的文件；如：如果当前文件夹名为grit，那么就会创建一个名为grit的git工程；第二种，使用git clone +地址的方式，将已有的工程">
-<meta property="og:updated_time" content="2015-07-21T15:11:04.000Z">
+<meta property="og:updated_time" content="2015-07-21T15:34:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git学习总结">
 <meta name="twitter:description" content="参考：http://git-scm.com/book/zh/v1 2-4章第二章  第一节 获取git仓库创建一个git仓库，两种方法：123456第一种：直接在所要创建的文件夹中执行git init命令，这时就创建了一个git仓库，但是并没有实际的管理任何 的文件；如：如果当前文件夹名为grit，那么就会创建一个名为grit的git工程；第二种，使用git clone +地址的方式，将已有的工程">
@@ -170,7 +170,7 @@
   
     <div class="article-meta">
       <a href="/2015/07/21/git学习总结/" class="article-date">
-  	<time datetime="2015-07-21T15:11:04.000Z" itemprop="datePublished">2015-07-21</time>
+  	<time datetime="2015-07-21T15:34:31.000Z" itemprop="datePublished">2015-07-21</time>
 </a>
     </div>
   
@@ -234,7 +234,7 @@
 <h3 id="第四章_第一节_服务器上的git协议">第四章 第一节 服务器上的git协议</h3><p>git支持四种协议：本地协议、ssh协议、git协议、http(s)协议</p>
 <h3 id="第四章_第二节_在服务器上部署git">第四章 第二节 在服务器上部署git</h3><p>首先在将现有仓库到处一份裸仓库：git clone —bare name name.git<br>注：git clone 相当于git init 加上git fetch<br>将裸仓库复制到服务器上：scp<br>-r my_project.git<br>user@git.example.com:/opt/git将裸仓库my_project.git复制到服务器git.example.com下/opt/git下面；<br>现在所有拥有写权限的用户都可以通过clone对用的地址来拉去此工程；<br>账号管理可以给每个拥有写权限的用户申请一个服务器的账号，或者在sshauthorized_keys 文件内添加各自的ssh公钥；</p>
 <h3 id="第四章_第三节_生成ssh公钥">第四章 第三节 生成ssh公钥</h3><p>ssh公钥的默认目录：~/.ssh<br>cd ~/.ssh检查电脑中是否已经生成过ssh公钥；<br>ssh keygen生成公钥</p>
-<p>第四章 第四节 架设服务器</p>
+<p>第四章 第四节 架设服务器<br><a id="more"></a></p>
 
       
     </div>
