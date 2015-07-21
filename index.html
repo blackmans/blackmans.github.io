@@ -167,11 +167,69 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-本地设置hosts不能及时生效的原因" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/21/本地设置hosts不能及时生效的原因/" class="article-date">
+  	<time datetime="2015-07-21T15:39:43.000Z" itemprop="datePublished">2015-07-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/21/本地设置hosts不能及时生效的原因/">本地设置hosts不能及时生效的原因</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="因为服务器设置了_keep-alive_！次要原因是存在浏览器_DNS_缓存和系统_DNS_缓存。">因为服务器设置了 keep-alive ！次要原因是存在浏览器 DNS 缓存和系统 DNS 缓存。</h2><h3 id="服务器设置了_keep-alive">服务器设置了 keep-alive</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chrome://net-internals/<span class="comment">#sockets //chrome关闭长连接</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNS/">DNS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/host/">host</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/调试/">调试</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/07/21/本地设置hosts不能及时生效的原因/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-git学习总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2015/07/21/git学习总结/" class="article-date">
-  	<time datetime="2015-07-21T15:38:32.000Z" itemprop="datePublished">2015-07-21</time>
+  	<time datetime="2015-07-21T15:39:28.000Z" itemprop="datePublished">2015-07-21</time>
 </a>
     </div>
   
@@ -194,6 +252,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="参考：http://git-scm-com/book/zh/v1_2-4章">参考：<a href="http://git-scm.com/book/zh/v1">http://git-scm.com/book/zh/v1</a> 2-4章</h3><h3 id="第二章_第一节_获取git仓库">第二章  第一节 获取git仓库</h3><p>创建一个git仓库，两种方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">第一种：直接在所要创建的文件夹中执行git init命令，这时就创建了一个git仓库，但是并没有实际的管理任何 的文件；</span><br><span class="line">如：如果当前文件夹名为grit，那么就会创建一个名为grit的git工程；</span><br><span class="line">第二种，使用git <span class="built_in">clone</span> +地址的方式，将已有的工程<span class="built_in">clone</span>到本地；</span><br><span class="line">如：git <span class="built_in">clone</span> git://github.com/schacon/grit.git 会在当前文件夹下创建一个名为grit的文件夹；如果想自己自定义项目的名称，那么只需要在地址的后面加上你的名字即可；如git://github.com/schacon/grit.git newName就可以啦；</span><br><span class="line">git支持多种协议地址，如：git://、http(s)://、user@server:path.git</span><br><span class="line">（疑问：挂钩设置是什么意思）</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -209,64 +268,6 @@
       
         <p class="article-more-link">
           <a  href="/2015/07/21/git学习总结/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-本地设置hosts不能及时生效的原因" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/21/本地设置hosts不能及时生效的原因/" class="article-date">
-  	<time datetime="2015-07-21T15:38:04.000Z" itemprop="datePublished">2015-07-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/21/本地设置hosts不能及时生效的原因/">本地设置hosts不能及时生效的原因</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="因为服务器设置了_keep-alive_！次要原因是存在浏览器_DNS_缓存和系统_DNS_缓存。">因为服务器设置了 keep-alive ！次要原因是存在浏览器 DNS 缓存和系统 DNS 缓存。</h2>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNS/">DNS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/host/">host</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/调试/">调试</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/07/21/本地设置hosts不能及时生效的原因/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
