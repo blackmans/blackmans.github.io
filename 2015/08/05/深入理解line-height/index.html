@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="行高是基线到基线的高度；
 
-1.首先，一个元素里面书写内容，元素高度是哪里来的？CSS：font-size: 0; line-height: 30px; border:1px solid green;```1```bash font-size: 30px; line-height: 0; border:1px solid green;
+1.首先，一个元素里面书写内容，元素高度是哪里来的？CSS：1font-size: 0; line-height: 30px; border:1px solid green;
+1font-size: 30px; line-height: 0; border:1px solid green;
 
 结论：元素的高度并不是文字撑开的，而是来自行高；">
 <meta property="og:type" content="article">
@@ -16,15 +17,17 @@
 <meta property="og:site_name" content="诸葛小群">
 <meta property="og:description" content="行高是基线到基线的高度；
 
-1.首先，一个元素里面书写内容，元素高度是哪里来的？CSS：font-size: 0; line-height: 30px; border:1px solid green;```1```bash font-size: 30px; line-height: 0; border:1px solid green;
+1.首先，一个元素里面书写内容，元素高度是哪里来的？CSS：1font-size: 0; line-height: 30px; border:1px solid green;
+1font-size: 30px; line-height: 0; border:1px solid green;
 
 结论：元素的高度并不是文字撑开的，而是来自行高；">
-<meta property="og:updated_time" content="2015-08-05T10:21:44.000Z">
+<meta property="og:updated_time" content="2015-08-05T10:24:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解line-height">
 <meta name="twitter:description" content="行高是基线到基线的高度；
 
-1.首先，一个元素里面书写内容，元素高度是哪里来的？CSS：font-size: 0; line-height: 30px; border:1px solid green;```1```bash font-size: 30px; line-height: 0; border:1px solid green;
+1.首先，一个元素里面书写内容，元素高度是哪里来的？CSS：1font-size: 0; line-height: 30px; border:1px solid green;
+1font-size: 30px; line-height: 0; border:1px solid green;
 
 结论：元素的高度并不是文字撑开的，而是来自行高；">
   
@@ -178,7 +181,7 @@
   
     <div class="article-meta">
       <a href="/2015/08/05/深入理解line-height/" class="article-date">
-  	<time datetime="2015-08-05T10:21:44.000Z" itemprop="datePublished">2015-08-05</time>
+  	<time datetime="2015-08-05T10:24:09.000Z" itemprop="datePublished">2015-08-05</time>
 </a>
     </div>
   
@@ -214,12 +217,18 @@
         <blockquote>
 <p>行高是基线到基线的高度；</p>
 </blockquote>
-<h4 id="1-首先，一个元素里面书写内容，元素高度是哪里来的？">1.首先，一个元素里面书写内容，元素高度是哪里来的？</h4><p>CSS：<br><figure class="highlight bash"><figcaption><span>font-size: 0; line-height: 30px; border:1px solid green;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```bash font-size: <span class="number">30</span>px; line-height: <span class="number">0</span>; border:<span class="number">1</span>px solid green;</span><br></pre></td></tr></table></figure></p>
+<h4 id="1-首先，一个元素里面书写内容，元素高度是哪里来的？">1.首先，一个元素里面书写内容，元素高度是哪里来的？</h4><p>CSS：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-size: <span class="number">0</span>; line-height: <span class="number">30</span>px; border:<span class="number">1</span>px solid green;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-size: <span class="number">30</span>px; line-height: <span class="number">0</span>; border:<span class="number">1</span>px solid green;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>结论：元素的高度并不是文字撑开的，而是来自行高；<br><a id="more"></a></p>
 <h4 id="2-行高是由谁来决定的">2.行高是由谁来决定的</h4></blockquote>
-<p>行高是由inline box决定的，也就是一些文字、内联元素、图片等元素决定的；<br>HTML&amp;CSS：<br><figure class="highlight"><figcaption><span>style="line-height:20px;">取手下line-height<span style="line-height:100px;">最高</span>的值</span>```</figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62; &#32467;&#35770;&#65306;line-height&#26159;&#30001;&#23376;&#20803;&#32032;&#26368;&#22823;&#30340;inline box&#20540;&#20915;&#23450;&#30340;&#65307;&#10;&#10;####3.&#35774;&#32622;&#34892;&#39640;100%&#21644;1&#30340;&#21306;&#21035;&#10;&#10;HTML&#65306;&#10;```&#60;div class=&#34;li&#34;&#62;&#60;span&#62;45678&#60;/span&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
-<p>CSS：<br><figure class="highlight"><figcaption><span>&#123; font-size: 20px; line-height: 100%;&#125; .li span&#123; font-size: 50px;&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```.li &#123; font-size: 20px; line-height: 1;&#125; .li span&#123; font-size: 50px;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>行高是由inline box决定的，也就是一些文字、内联元素、图片等元素决定的；<br>HTML&amp;CSS：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&lt;span style=<span class="string">"line-height:20px;"</span>&gt;取手下line-height&lt;span style=<span class="string">"line-height:100px;"</span>&gt;最高&lt;/span&gt;的值&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>结论：line-height是由子元素最大的inline box值决定的；</p>
+</blockquote>
+<h4 id="3-设置行高100%和1的区别">3.设置行高100%和1的区别</h4><p>HTML：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"li"</span>&gt;&lt;span&gt;<span class="number">45678</span>&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>CSS：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.li &#123; font-size: <span class="number">20</span>px; line-height: <span class="number">100</span>%;&#125; .li span&#123; font-size: <span class="number">50</span>px;&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.li &#123; font-size: <span class="number">20</span>px; line-height: <span class="number">1</span>;&#125; .li span&#123; font-size: <span class="number">50</span>px;&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>结论：首先<code>line-height</code>设置%，是相对与自身的<code>font-size</code>的；所以无论设置100%还是1，都是按照字体大小计算；但是设置%，行高是先计算成px值再去给它的子元素继承；设置成1，实现先继承数字1再由子元素根据自己的<code>font-size</code>来计算行高；</p>
 </blockquote>
