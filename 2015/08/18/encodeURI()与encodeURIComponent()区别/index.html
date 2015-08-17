@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>初步理解CDN | 诸葛小群</title>
+  <title>encodeURI()与encodeURIComponent()区别 | 诸葛小群</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CDN的全称是Content Delivery Network，即内容分发网络。其目的是在网络请求过程中，添加一层cache层即缓存层。将网站的内容分布到最接近用户的节点（服务器）上，缓存起来提高用户访问速度。CDN技术主要用来缓存一些静态资源（如：html/js/css/图片等），一定时间内不需要去请求源服务器的文件。">
+  <meta name="description" content="他们的编码范围不一样，导致他们在平常使用时的侧重点有所不同。都是将字符串转换为UTF-8的方式来传输。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初步理解CDN">
-<meta property="og:url" content="http://yoursite.com/2015/08/17/初步理解CDN/index.html">
+<meta property="og:title" content="encodeURI()与encodeURIComponent()区别">
+<meta property="og:url" content="http://yoursite.com/2015/08/18/encodeURI()与encodeURIComponent()区别/index.html">
 <meta property="og:site_name" content="诸葛小群">
-<meta property="og:description" content="CDN的全称是Content Delivery Network，即内容分发网络。其目的是在网络请求过程中，添加一层cache层即缓存层。将网站的内容分布到最接近用户的节点（服务器）上，缓存起来提高用户访问速度。CDN技术主要用来缓存一些静态资源（如：html/js/css/图片等），一定时间内不需要去请求源服务器的文件。">
-<meta property="og:updated_time" content="2015-08-16T17:45:53.000Z">
+<meta property="og:description" content="他们的编码范围不一样，导致他们在平常使用时的侧重点有所不同。都是将字符串转换为UTF-8的方式来传输。">
+<meta property="og:updated_time" content="2015-08-17T18:42:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初步理解CDN">
-<meta name="twitter:description" content="CDN的全称是Content Delivery Network，即内容分发网络。其目的是在网络请求过程中，添加一层cache层即缓存层。将网站的内容分布到最接近用户的节点（服务器）上，缓存起来提高用户访问速度。CDN技术主要用来缓存一些静态资源（如：html/js/css/图片等），一定时间内不需要去请求源服务器的文件。">
+<meta name="twitter:title" content="encodeURI()与encodeURIComponent()区别">
+<meta name="twitter:description" content="他们的编码范围不一样，导致他们在平常使用时的侧重点有所不同。都是将字符串转换为UTF-8的方式来传输。">
   
     <link rel="alternative" href="/atom.xml" title="诸葛小群" type="application/atom+xml">
   
@@ -162,11 +162,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-初步理解CDN" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-encodeURI()与encodeURIComponent()区别" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/08/17/初步理解CDN/" class="article-date">
-  	<time datetime="2015-08-16T17:45:53.000Z" itemprop="datePublished">2015-08-17</time>
+      <a href="/2015/08/18/encodeURI()与encodeURIComponent()区别/" class="article-date">
+  	<time datetime="2015-08-17T18:42:48.000Z" itemprop="datePublished">2015-08-18</time>
 </a>
     </div>
   
@@ -179,7 +179,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      初步理解CDN
+      encodeURI()与encodeURIComponent()区别
     </h1>
   
 
@@ -188,7 +188,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CDN/">CDN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNS/">DNS</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/encodeURI/">encodeURI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/encodeURIComponent/">encodeURIComponent</a></li></ul>
 	</div>
 
         
@@ -200,11 +200,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>CDN的全称是Content Delivery Network，即内容分发网络。其目的是在网络请求过程中，添加一层cache层即缓存层。将网站的内容分布到最接近用户的节点（服务器）上，缓存起来提高用户访问速度。<br>CDN技术主要用来缓存一些静态资源（如：html/js/css/图片等），一定时间内不需要去请求源服务器的文件。</p>
+<p>他们的编码范围不一样，导致他们在平常使用时的侧重点有所不同。都是将字符串转换为UTF-8的方式来传输。</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="采用CDN和没有采用CDN技术的区别">采用CDN和没有采用CDN技术的区别</h3><h4 id="没有使用CDN">没有使用CDN</h4><p>1.用户输入访问的域名,操作系统向 LocalDns 查询域名的ip地址.<br>LocalDns向 ROOT DNS 2.查询域名的授权服务器(这里假设LocalDns缓存过期)<br>3.ROOT DNS将域名授权dns记录回应给 LocalDns<br>4.LocalDns得到域名的授权dns记录后,继续向域名授权dns查询域名的ip地址<br>5.域名授权dns 查询域名记录后，回应给 LocalDns<br>6.LocalDns 将得到的域名ip地址，回应给 用户端<br>7.用户得到域名ip地址后，访问站点服务器<br>8.站点服务器应答请求，将内容返回给客户端.</p>
-<h4 id="使用CDN">使用CDN</h4><p>1.用户输入访问的域名,操作系统向 LocalDns 查询域名的ip地址.<br>LocalDns向 ROOT DNS 2.查询域名的授权服务器(这里假设LocalDns缓存过期)<br>3.ROOT DNS将域名授权dns记录回应给 LocalDns<br>4.LocalDns得到域名的授权dns记录后,继续向域名授权dns查询域名的ip地址<br>5.域名授权dns 查询域名记录后(一般是CNAME)，回应给 LocalDns<br>6.LocalDns 得到域名记录后,向智能调度DNS查询域名的ip地址<br>7.智能调度DNS 根据一定的算法和策略(比如静态拓扑，容量等),将最适合的CDN节点ip地址回应给 LocalDns<br>8.LocalDns 将得到的域名ip地址，回应给 用户端<br>9.用户得到域名ip地址后，访问站点服务器<br>10.CDN节点服务器应答请求，将内容返回给客户端.(缓存服务器一方面在本地进行保存，以备以后使用，二方面把获取的数据返回给客户端，完成数据服务过程)</p>
+<p>encodeURI不编码字符有82个：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!，<span class="comment">#，$，&amp;，'，(，)，*，+，,，-，.，/，:，;，=，?，@，_，~，0-9，a-z，A-Z</span></span><br></pre></td></tr></table></figure></p>
+<p>encodeURIComponent不编码字符有71个：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!， <span class="string">'，(，)，*，-，.，_，~，0-9，a-z，A-Z</span></span><br></pre></td></tr></table></figure></p>
+<p>所以在表现上，encodeURI()一般用于对整个URL进行编码时使用，因为URI中的合法字符都不会被编码转换。<br>encodeURI()编码,URL可以使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">encodeURI(<span class="string">'http://blackmans.github.io/2015/08/17/初步理解CDN/'</span>);</span><br><span class="line"><span class="string">"http://blackmans.github.io/2015/08/17/%E5%88%9D%E6%AD%A5%E7%90%86%E8%A7%A3CDN/"</span></span><br></pre></td></tr></table></figure>
+<p>encodeURIComponent()编码，URL不可以使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">encodeURIComponent(<span class="string">'http://blackmans.github.io/2015/08/17/初步理解CDN/'</span>);</span><br><span class="line"><span class="string">"http%3A%2F%2Fblackmans.github.io%2F2015%2F08%2F17%2F%E5%88%9D%E6%AD%A5%E7%90%86%E8%A7%A3CDN%2F"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>因此，一般情况下，使用encodeURI()编码整个URL，使用encodeURIComponent()处理参数部分，它可以讲参数中的中文、特殊字符进行转义，而不会影响整个URL。</p>
+</blockquote>
 
       
     </div>
@@ -214,18 +221,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/08/18/encodeURI()与encodeURIComponent()区别/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          encodeURI()与encodeURIComponent()区别
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/08/12/浅谈外网与内网/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">浅谈内网和外网</div>
+    <a href="/2015/08/17/初步理解CDN/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初步理解CDN</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -254,7 +252,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="初步理解CDN" data-title="初步理解CDN" data-url="http://yoursite.com/2015/08/17/初步理解CDN/"></div>
+	<div class="ds-thread" data-thread-key="encodeURI()与encodeURIComponent()区别" data-title="encodeURI()与encodeURIComponent()区别" data-url="http://yoursite.com/2015/08/18/encodeURI()与encodeURIComponent()区别/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
