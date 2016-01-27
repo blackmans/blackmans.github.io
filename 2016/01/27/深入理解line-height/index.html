@@ -3,18 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>浅谈内网和外网 | Black</title>
+  <title>深入理解line-height | Black</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内网指局域网是一个相对概念（如学校、公司等），相对于internet来说都是内网；外网指internet网络，但是一个范围更大的局域网相对于一个较小的局域网来说，他自己就是一个外网；">
+  <meta name="description" content="行高是基线到基线的高度；
+
+1.首先，一个元素里面书写内容，元素高度是哪里来的？CSS：1font-size: 0; line-height: 30px; border:1px solid green;
+1font-size: 30px; line-height: 0; border:1px solid green;
+
+结论：元素的高度并不是文字撑开的，而是来自行高；">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈内网和外网">
-<meta property="og:url" content="http://yoursite.com/2015/10/20/浅谈外网与内网/index.html">
+<meta property="og:title" content="深入理解line-height">
+<meta property="og:url" content="http://yoursite.com/2016/01/27/深入理解line-height/index.html">
 <meta property="og:site_name" content="Black">
-<meta property="og:description" content="内网指局域网是一个相对概念（如学校、公司等），相对于internet来说都是内网；外网指internet网络，但是一个范围更大的局域网相对于一个较小的局域网来说，他自己就是一个外网；">
-<meta property="og:updated_time" content="2015-08-11T18:02:53.000Z">
+<meta property="og:description" content="行高是基线到基线的高度；
+
+1.首先，一个元素里面书写内容，元素高度是哪里来的？CSS：1font-size: 0; line-height: 30px; border:1px solid green;
+1font-size: 30px; line-height: 0; border:1px solid green;
+
+结论：元素的高度并不是文字撑开的，而是来自行高；">
+<meta property="og:updated_time" content="2015-08-05T10:25:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅谈内网和外网">
-<meta name="twitter:description" content="内网指局域网是一个相对概念（如学校、公司等），相对于internet来说都是内网；外网指internet网络，但是一个范围更大的局域网相对于一个较小的局域网来说，他自己就是一个外网；">
+<meta name="twitter:title" content="深入理解line-height">
+<meta name="twitter:description" content="行高是基线到基线的高度；
+
+1.首先，一个元素里面书写内容，元素高度是哪里来的？CSS：1font-size: 0; line-height: 30px; border:1px solid green;
+1font-size: 30px; line-height: 0; border:1px solid green;
+
+结论：元素的高度并不是文字撑开的，而是来自行高；">
   
     <link rel="alternative" href="/atom.xml" title="Black" type="application/atom+xml">
   
@@ -162,11 +177,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-浅谈外网与内网" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-深入理解line-height" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/20/浅谈外网与内网/" class="article-date">
-  	<time datetime="2015-10-20T10:22:10.000Z" itemprop="datePublished">2015-10-20</time>
+      <a href="/2016/01/27/深入理解line-height/" class="article-date">
+  	<time datetime="2016-01-27T09:01:05.000Z" itemprop="datePublished">2016-01-27</time>
 </a>
     </div>
   
@@ -179,7 +194,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      浅谈内网和外网
+      深入理解line-height
     </h1>
   
 
@@ -188,7 +203,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/line-height/">line-height</a></li></ul>
 	</div>
 
         
@@ -200,12 +215,23 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>内网指局域网是一个相对概念（如学校、公司等），相对于internet来说都是内网；<br>外网指internet网络，但是一个范围更大的局域网相对于一个较小的局域网来说，他自己就是一个外网；</p>
+<p>行高是基线到基线的高度；</p>
 </blockquote>
-<a id="more"></a>
-<h3 id="内网IP和外网IP">内网IP和外网IP</h3><p>内网IP是由局域网随机分发的，仅限在内网内部进行使用，比如各个电脑通过内网IP进行交互，在同一个内网的IP是不会重复的；但是不同内网的IP是有可能重复的；<br>外网IP是由”IANA”(InternetAssigned NumbersAuthority，互联网网络号分配机构)组织管理的，这个IP是唯一的。</p>
-<h4 id="内网IP和外网IP的关系">内网IP和外网IP的关系</h4><p>首先内网IP和外网IP是可以共存的；内网IP要想访问互联网是要通过外网IP进行的，局域网内存在多个内网IP和多个设备都是通过外网IP进行访问外网的；你在内网的机子在上网时，都是在向网关发出请求，再由网关（一般为路由器）用外网IP转到INT网上，接受数据后，再分发到你的内网IP上。</p>
-<h3 id="局域网IP段">局域网IP段</h3><p>IANA将A、B、C类IP地址的一部分保留下来，留作局域网使用的<br>IP地址空间：<br>a类网<br>10.0.0.0~10.255.255.255<br>b类网<br>172.16.0.0~172.31.255.255<br>c类网<br>192.168.0.0~192.168.255.255</p>
+<h4 id="1-首先，一个元素里面书写内容，元素高度是哪里来的？">1.首先，一个元素里面书写内容，元素高度是哪里来的？</h4><p>CSS：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-size: <span class="number">0</span>; line-height: <span class="number">30</span>px; border:<span class="number">1</span>px solid green;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-size: <span class="number">30</span>px; line-height: <span class="number">0</span>; border:<span class="number">1</span>px solid green;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>结论：元素的高度并不是文字撑开的，而是来自行高；<br><a id="more"></a></p>
+<h4 id="2-行高是由谁来决定的">2.行高是由谁来决定的</h4></blockquote>
+<p>行高是由inline box决定的，也就是一些文字、内联元素、图片等元素决定的；<br>HTML&amp;CSS：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&lt;span style=<span class="string">"line-height:20px;"</span>&gt;取手下line-height&lt;span style=<span class="string">"line-height:100px;"</span>&gt;最高&lt;/span&gt;的值&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>结论：line-height是由子元素最大的inline box值决定的；</p>
+</blockquote>
+<h4 id="3-设置行高100%和1的区别">3.设置行高100%和1的区别</h4><p>HTML：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"li"</span>&gt;&lt;span&gt;<span class="number">45678</span>&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>CSS：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.li &#123; font-size: <span class="number">20</span>px; line-height: <span class="number">100</span>%;&#125; .li span&#123; font-size: <span class="number">50</span>px;&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.li &#123; font-size: <span class="number">20</span>px; line-height: <span class="number">1</span>;&#125; .li span&#123; font-size: <span class="number">50</span>px;&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>结论：首先<code>line-height</code>设置%，是相对与自身的<code>font-size</code>的；所以无论设置100%还是1，都是按照字体大小计算；但是设置%，行高是先计算成px值再去给它的子元素继承；设置成1，实现先继承数字1再由子元素根据自己的<code>font-size</code>来计算行高；</p>
+</blockquote>
 
       
     </div>
@@ -215,18 +241,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/10/20/深入理解line-height/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/27/encodeURI()与encodeURIComponent()区别/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          深入理解line-height
+          encodeURI()与encodeURIComponent()区别
         
       </div>
     </a>
   
   
-    <a href="/2015/10/20/本地设置hosts不能及时生效的原因/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">本地设置hosts不能及时生效的原因</div>
+    <a href="/2016/01/27/浅谈外网与内网/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅谈内网和外网</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -255,7 +281,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="浅谈外网与内网" data-title="浅谈内网和外网" data-url="http://yoursite.com/2015/10/20/浅谈外网与内网/"></div>
+	<div class="ds-thread" data-thread-key="深入理解line-height" data-title="深入理解line-height" data-url="http://yoursite.com/2016/01/27/深入理解line-height/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
