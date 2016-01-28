@@ -10,7 +10,7 @@ vertical-align适用于 inline level, inline-block level 及 table-cells 元素�
 
 vertical-align设置百分比时，是怎么取值的？？
 1.test &amp;#123;line-height: 50px; vertical-align:10%; //实际值是5px&amp;#125;
-&amp;lt;div style=&quot;ba">
+12345678910111213">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vertical-align与line-height">
 <meta property="og:url" content="http://yoursite.com/2016/01/28/vertical-align与line-height/index.html">
@@ -20,9 +20,8 @@ vertical-align适用于 inline level, inline-block level 及 table-cells 元素�
 
 vertical-align设置百分比时，是怎么取值的？？
 1.test &amp;#123;line-height: 50px; vertical-align:10%; //实际值是5px&amp;#125;
-&amp;lt;div style=&quot;ba">
-<meta property="og:image" content="http://yoursite.com/image/vertical1.png">
-<meta property="og:updated_time" content="2016-01-28T08:23:01.000Z">
+12345678910111213">
+<meta property="og:updated_time" content="2016-01-28T10:34:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vertical-align与line-height">
 <meta name="twitter:description" content="vertical-align
@@ -30,7 +29,7 @@ vertical-align适用于 inline level, inline-block level 及 table-cells 元素�
 
 vertical-align设置百分比时，是怎么取值的？？
 1.test &amp;#123;line-height: 50px; vertical-align:10%; //实际值是5px&amp;#125;
-&amp;lt;div style=&quot;ba">
+12345678910111213">
   
     <link rel="alternative" href="/atom.xml" title="Black" type="application/atom+xml">
   
@@ -182,7 +181,7 @@ vertical-align设置百分比时，是怎么取值的？？
   
     <div class="article-meta">
       <a href="/2016/01/28/vertical-align与line-height/" class="article-date">
-  	<time datetime="2016-01-28T08:23:01.000Z" itemprop="datePublished">2016-01-28</time>
+  	<time datetime="2016-01-28T10:34:38.000Z" itemprop="datePublished">2016-01-28</time>
 </a>
     </div>
   
@@ -216,17 +215,27 @@ vertical-align设置百分比时，是怎么取值的？？
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="vertical-align">vertical-align</h3><blockquote>
-<p>vertical-align适用于 inline level, inline-block level 及 table-cells 元素上</p>
+<p><code>vertical-align</code>适用于 <code>inline level</code>, <code>inline-block level</code> 及 <code>table-cells</code> 元素上</p>
 </blockquote>
-<p>vertical-align设置百分比时，是怎么取值的？？</p>
+<p><code>vertical-align</code>设置百分比时，是怎么取值的？？</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.test &#123;line-height: <span class="number">50</span>px; vertical-align:<span class="number">10</span>%; //实际值是<span class="number">5</span>px&#125;</span><br></pre></td></tr></table></figure>
-<pre><code class="bash">&lt;div style=<span class="string">"background: brown;"</span>&gt;
-    &lt;img src=<span class="string">"test.jpg"</span> /&gt;
-    &lt;span style=<span class="string">"background: white;"</span>&gt;qq&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
-<p><img src="/image/vertical1.png" alt="&#39;vertical1&#39;"></p>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"background: brown; width: 400px;"</span>&gt;</span><br><span class="line">    &lt;img src=<span class="string">"vertical1.jpg"</span> /&gt;</span><br><span class="line">    &lt;span style=<span class="string">"background: white;"</span>&gt;qq&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">```   </span><br><span class="line"></span><br><span class="line">![<span class="string">'vertical1'</span>](/image/vertical1.png)</span><br><span class="line">看到上面的现象让我们来分析一下原因：</span><br><span class="line">&gt; <span class="number">1</span>.`vertial-align`默认的对齐方式是什么（默认是基线对齐的，其实这里和英文字母的书写方式是有关系的）；</span><br><span class="line"><span class="number">2</span>.后面文字的默认高度是哪里来的（其实这里是一个行内盒子，由<span class="number">4</span>各盒子组成，高度是由line-height决定的）；</span><br><span class="line">那么这里的间隙就是这么形成的；</span><br><span class="line"></span><br><span class="line">解决方案（对症下药）：</span><br><span class="line">&gt; <span class="number">1</span>.我们知道`vertial-align对diaplay:block;`是不起作用的，所以我们可以设置block；</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">&lt;div style=<span class="string">"background: brown; width: 400px;"</span>&gt;</span><br><span class="line">    &lt;img style=<span class="string">"display:block;"</span> src=<span class="string">"black.jpg"</span> /&gt;</span><br><span class="line">    &lt;span style=<span class="string">"background: white;"</span>&gt;qq&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>带来的副作用就是图片会独占一行；</p>
+<blockquote>
+<p>2.设置图片的<code>vertical-align的值为bottom/middle/top</code>都可以</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"background: brown; width: 400px;"</span>&gt;</span><br><span class="line">    &lt;img style=<span class="string">"vertical-align: bottom;"</span> src=<span class="string">"black.jpg"</span> /&gt;</span><br><span class="line">    &lt;span style=<span class="string">"background: white;"</span>&gt;qq&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>3.设置后面文字<code>line-height</code>的值小于字号大小；</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"background: brown; line-height: 5px;"</span>&gt;</span><br><span class="line">    &lt;img src=<span class="string">"black.jpg"</span> /&gt;&lt;span style=<span class="string">"background: white;"</span>&gt;qq&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>注意：这里也有一些小问题，如果后面的文字是像‘q’这样的字母时（就是书写时会占到基线以下时），字母会超出容器；</p>
+<blockquote>
+<p>4.如果<code>line-height:1.5[150%]</code>是相对单位，具体line-height特性可以查看<a href="http://blackmans.github.io/2016/01/27/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3line-height/" target="_blank" rel="external">深入理解line-height</a>一文</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"background: brown; font-size: 0; line-height: 1;"</span>&gt;</span><br><span class="line">    &lt;img src=<span class="string">"black.jpg"</span> /&gt;&lt;span style=<span class="string">"background: white;"</span>&gt;qq&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>注意：这里也会影响后面文字的显示；</p>
+<h3 id="vertical-align扩展使用">vertical-align扩展使用</h3>
       
     </div>
     
