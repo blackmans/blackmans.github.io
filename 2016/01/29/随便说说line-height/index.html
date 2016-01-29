@@ -5,16 +5,20 @@
   
   <title>随便说说line-height | Black</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="line-heightline-height：normal | length | percentage | number默认值：normal适用于：所有元素继承性：有">
+  <meta name="description" content="line-height语法line-height：normal | length | percentage | number默认值：normal适用于：所有元素继承性：有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随便说说line-height">
 <meta property="og:url" content="http://yoursite.com/2016/01/29/随便说说line-height/index.html">
 <meta property="og:site_name" content="Black">
-<meta property="og:description" content="line-heightline-height：normal | length | percentage | number默认值：normal适用于：所有元素继承性：有">
-<meta property="og:updated_time" content="2016-01-29T03:41:12.000Z">
+<meta property="og:description" content="line-height语法line-height：normal | length | percentage | number默认值：normal适用于：所有元素继承性：有">
+<meta property="og:image" content="http://yoursite.com/image/contentarea.png">
+<meta property="og:image" content="http://yoursite.com/image/inlinebox.png">
+<meta property="og:image" content="http://yoursite.com/image/linebox.png">
+<meta property="og:image" content="http://yoursite.com/image/containbox.png">
+<meta property="og:updated_time" content="2016-01-29T09:53:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="随便说说line-height">
-<meta name="twitter:description" content="line-heightline-height：normal | length | percentage | number默认值：normal适用于：所有元素继承性：有">
+<meta name="twitter:description" content="line-height语法line-height：normal | length | percentage | number默认值：normal适用于：所有元素继承性：有">
   
     <link rel="alternative" href="/atom.xml" title="Black" type="application/atom+xml">
   
@@ -166,7 +170,7 @@
   
     <div class="article-meta">
       <a href="/2016/01/29/随便说说line-height/" class="article-date">
-  	<time datetime="2016-01-29T03:41:12.000Z" itemprop="datePublished">2016-01-29</time>
+  	<time datetime="2016-01-29T09:53:13.000Z" itemprop="datePublished">2016-01-29</time>
 </a>
     </div>
   
@@ -199,18 +203,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="line-height">line-height</h2><p>line-height：normal | length | percentage | number<br>默认值：normal<br>适用于：所有元素<br>继承性：有</p>
+        <h2 id="line-height语法">line-height语法</h2><p>line-height：normal | length | percentage | number<br>默认值：normal<br>适用于：所有元素<br>继承性：有</p>
 <a id="more"></a>
 <ul>
 <li>normal: 默认合理的值</li>
 <li>length: 长度值，不可以使用负值</li>
 <li>percentage: 计算与字体大小的乘积</li>
-<li><p>number: 同样是计算与字体大小的乘积</p>
-</li>
-<li><p>注意：<percentage>与<number>的区别在于，在子级集成祖先级的时候，前者是先与祖先级计算在让子级继承；而后者则是先让子级集成，再与子级字体大小进行自己算；</number></percentage></p>
-</li>
+<li>number: 同样是计算与字体大小的乘积</li>
+<li>注意：<percentage>与<number>的区别在于，在子级集成祖先级的时候，前者是先与祖先级计算在让子级继承；而后者则是先让子级集成，再与子级字体大小进行自己算；</number></percentage></li>
 </ul>
-
+<h2 id="与line-height相关的四个框或盒子（box）">与line-height相关的四个框或盒子（box）</h2><p>1.content area（内容区域）</p>
+<p><img src="/image/contentarea.png" alt="content area"><br>就是文字撑开的范围，是有font-size决定的；</p>
+<p>2.inline box（行内框）</p>
+<p><img src="/image/inlinebox.png" alt="inline box"><br>inline box 的高度是由行高决定的，这里值得注意的是，inline元素和inline-block表现上是不一样的；同样都设置同样的行高，并且都设置背景颜色，前者不会显示与行高一样的背景范围，但是后者则可以，这是因为inline元素不支持宽高的原因。</p>
+<p>3.line box（行框）</p>
+<p><img src="/image/linebox.png" alt="line box"><br>line box 是由inline box组成的，高度也是有inline box决定的；超出容器范围时line box会自动折行，形成多个line box；</p>
+<p>4.contain box</p>
+<p><img src="/image/containbox.png" alt="contain box"><br>contain box是由line box做成的；</p>
+<h2 id="line-height与四种框的关系">line-height与四种框的关系</h2>
       
     </div>
     
