@@ -15,7 +15,9 @@
 <meta property="og:image" content="http://yoursite.com/image/inlinebox.jpg">
 <meta property="og:image" content="http://yoursite.com/image/linebox.jpg">
 <meta property="og:image" content="http://yoursite.com/image/containbox.jpg">
-<meta property="og:updated_time" content="2016-01-29T10:29:51.000Z">
+<meta property="og:image" content="http://yoursite.com/image/lineheight.jpg">
+<meta property="og:image" content="http://yoursite.com/image/hangneigao.jpg">
+<meta property="og:updated_time" content="2016-01-29T11:11:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="随便说说line-height">
 <meta name="twitter:description" content="line-height语法line-height：normal | length | percentage | number默认值：normal适用于：所有元素继承性：有">
@@ -170,7 +172,7 @@
   
     <div class="article-meta">
       <a href="/2016/01/29/随便说说line-height/" class="article-date">
-  	<time datetime="2016-01-29T10:29:51.000Z" itemprop="datePublished">2016-01-29</time>
+  	<time datetime="2016-01-29T11:11:39.000Z" itemprop="datePublished">2016-01-29</time>
 </a>
     </div>
   
@@ -216,7 +218,12 @@
 <h3 id="2-inline_box（行内框）">2.inline box（行内框）</h3><p><img src="/image/inlinebox.jpg" alt="inline box"><br>inline box 的高度是由行高决定的，这里值得注意的是，inline元素和inline-block表现上是不一样的；同样都设置同样的行高，并且都设置背景颜色，前者不会显示与行高一样的背景范围，但是后者则可以，这是因为inline元素不支持宽高的原因。</p>
 <h3 id="3-line_box（行框）">3.line box（行框）</h3><p><img src="/image/linebox.jpg" alt="line box"><br>line box 是由inline box组成的，高度也是有inline box决定的；超出容器范围时line box会自动折行，形成多个line box；</p>
 <h3 id="4-contain_box">4.contain box</h3><p><img src="/image/containbox.jpg" alt="contain box"><br>contain box是由line box做成的；</p>
-<h2 id="line-height与四种框的关系">line-height与四种框的关系</h2><h3 id="1-行高的表现">1.行高的表现</h3>
+<h2 id="line-height与四种框的关系">line-height与四种框的关系</h2><h3 id="1-行高的表现">1.行高的表现</h3><p>行高是基线到基线的距离，下图中也体现出了行距；<br><img src="/image/lineheight.jpg" alt="line-height"></p>
+<h3 id="2-行内框">2.行内框</h3><p>行内框实际是，行高减去文字的高度/2；<br><img src="/image/hangneigao.jpg" alt="hangneigao"></p>
+<blockquote>
+<p>注：line-height其实是作用于inline box元素的。</p>
+</blockquote>
+
       
     </div>
     
