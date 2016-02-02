@@ -103,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DNS/" style="font-size: 15px;">DNS</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/encodeURI/" style="font-size: 10px;">encodeURI</a> <a href="/tags/encodeURIComponent/" style="font-size: 10px;">encodeURIComponent</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/line-height/" style="font-size: 20px;">line-height</a> <a href="/tags/vertical-align/" style="font-size: 15px;">vertical-align</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a>
+						<a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DNS/" style="font-size: 13.33px;">DNS</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/encodeURI/" style="font-size: 10px;">encodeURI</a> <a href="/tags/encodeURIComponent/" style="font-size: 10px;">encodeURIComponent</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/line-height/" style="font-size: 20px;">line-height</a> <a href="/tags/vertical-align/" style="font-size: 16.67px;">vertical-align</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a>
 					</div>
 				</section>
 				
@@ -162,6 +162,67 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-实现等高布局方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/02/实现等高布局方法/" class="article-date">
+  	<time datetime="2016-02-02T11:55:15.000Z" itemprop="datePublished">2016-02-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/02/实现等高布局方法/">vertical-align与line-height</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-利用border和margin实现等高布局">1.利用border和margin实现等高布局</h2><p>CSS</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.clear &#123; zoom: <span class="number">1</span>;&#125;</span><br><span class="line">.clear:after &#123; content: <span class="string">''</span>; clear: both; display: block;&#125;</span><br><span class="line"></span><br><span class="line">.wrap &#123; background: pink; border-left: <span class="number">200</span>px solid green; border-right: <span class="number">200</span>px solid brown;&#125;</span><br><span class="line">.left &#123; <span class="built_in">float</span>: left; margin-left: -<span class="number">200</span>px; width: <span class="number">200</span>px;&#125;</span><br><span class="line">.right &#123; <span class="built_in">float</span>: right; margin-right: -<span class="number">300</span>px; width: <span class="number">300</span>px;&#125;</span><br><span class="line">.center &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>HTML</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"wrap clear"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"left"</span>&gt;left&lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"right"</span>&gt;right&lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"center"</span>&gt;center&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>通过设置包裹层的border，作为左右侧栏的背景颜色，实现等高布局；设置左右侧栏的margin值使内容显示在内容区域。</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/line-height/">line-height</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vertical-align/">vertical-align</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-随便说说line-height" class="article article-type-post" itemscope itemprop="blogPost">
   
