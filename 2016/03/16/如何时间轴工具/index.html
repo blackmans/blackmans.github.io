@@ -3,21 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>实现等高布局的方法 | Black</title>
+  <title>chrome调试工具之如何使用时间轴工具 | Black</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.利用border和margin实现等高布局CSS
-1234567.clear &amp;#123; zoom: 1;&amp;#125;.clear:after &amp;#123; content: &apos;&apos;; clear: both; display: block;&amp;#125;.wrap &amp;#123; background: pink; border-left: 200px solid green; border-r">
+  <meta name="description" content="使用Chrome DevTools时间轴面板来记录和分析您的应用程序运行时的所有活动，对你的应用来说它是审查感知性能问题最好的场所。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实现等高布局的方法">
-<meta property="og:url" content="http://yoursite.com/2016/02/02/实现等高布局方法/index.html">
+<meta property="og:title" content="chrome调试工具之如何使用时间轴工具">
+<meta property="og:url" content="http://yoursite.com/2016/03/16/如何时间轴工具/index.html">
 <meta property="og:site_name" content="Black">
-<meta property="og:description" content="1.利用border和margin实现等高布局CSS
-1234567.clear &amp;#123; zoom: 1;&amp;#125;.clear:after &amp;#123; content: &apos;&apos;; clear: both; display: block;&amp;#125;.wrap &amp;#123; background: pink; border-left: 200px solid green; border-r">
-<meta property="og:updated_time" content="2016-02-02T11:57:12.000Z">
+<meta property="og:description" content="使用Chrome DevTools时间轴面板来记录和分析您的应用程序运行时的所有活动，对你的应用来说它是审查感知性能问题最好的场所。">
+<meta property="og:image" content="http://yoursite.com/image/timeline-panel.png">
+<meta property="og:image" content="http://yoursite.com/image/timeline-annotated.png">
+<meta property="og:image" content="http://yoursite.com/image/overview-annotated.png">
+<meta property="og:image" content="http://yoursite.com/image/details-pane.png">
+<meta property="og:image" content="http://yoursite.com/image/find-toolbar.png">
+<meta property="og:image" content="http://yoursite.com/image/zoom.png">
+<meta property="og:image" content="http://yoursite.com/image/save-open.png">
+<meta property="og:updated_time" content="2016-03-15T16:02:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实现等高布局的方法">
-<meta name="twitter:description" content="1.利用border和margin实现等高布局CSS
-1234567.clear &amp;#123; zoom: 1;&amp;#125;.clear:after &amp;#123; content: &apos;&apos;; clear: both; display: block;&amp;#125;.wrap &amp;#123; background: pink; border-left: 200px solid green; border-r">
+<meta name="twitter:title" content="chrome调试工具之如何使用时间轴工具">
+<meta name="twitter:description" content="使用Chrome DevTools时间轴面板来记录和分析您的应用程序运行时的所有活动，对你的应用来说它是审查感知性能问题最好的场所。">
   
     <link rel="alternative" href="/atom.xml" title="Black" type="application/atom+xml">
   
@@ -165,11 +169,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-实现等高布局方法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-如何时间轴工具" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/02/实现等高布局方法/" class="article-date">
-  	<time datetime="2016-02-02T11:57:12.000Z" itemprop="datePublished">2016-02-02</time>
+      <a href="/2016/03/16/如何时间轴工具/" class="article-date">
+  	<time datetime="2016-03-15T16:02:00.000Z" itemprop="datePublished">2016-03-16</time>
 </a>
     </div>
   
@@ -182,7 +186,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      实现等高布局的方法
+      chrome调试工具之如何使用时间轴工具
     </h1>
   
 
@@ -191,7 +195,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/border/">border</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/margin/">margin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/等高/">等高</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timeline/">timeline</a></li></ul>
 	</div>
 
         
@@ -202,13 +206,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-利用border和margin实现等高布局">1.利用border和margin实现等高布局</h2><p>CSS</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.clear &#123; zoom: <span class="number">1</span>;&#125;</span><br><span class="line">.clear:after &#123; content: <span class="string">''</span>; clear: both; display: block;&#125;</span><br><span class="line"></span><br><span class="line">.wrap &#123; background: pink; border-left: <span class="number">200</span>px solid green; border-right: <span class="number">200</span>px solid brown;&#125;</span><br><span class="line">.left &#123; <span class="built_in">float</span>: left; margin-left: -<span class="number">200</span>px; width: <span class="number">200</span>px;&#125;</span><br><span class="line">.right &#123; <span class="built_in">float</span>: right; margin-right: -<span class="number">300</span>px; width: <span class="number">300</span>px;&#125;</span><br><span class="line">.center &#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>HTML</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"wrap clear"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"left"</span>&gt;left&lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"right"</span>&gt;right&lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"center"</span>&gt;center&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>通过设置包裹层的border，作为左右侧栏的背景颜色，实现等高布局；设置左右侧栏的margin值使内容显示在内容区域。</p>
+        <blockquote>
+<p>使用Chrome DevTools时间轴面板来记录和分析您的应用程序运行时的所有活动，对你的应用来说它是审查感知性能问题最好的场所。</p>
 </blockquote>
+<a id="more"></a>
+<p><img src="/image/timeline-panel.png" alt="timeline-panel"></p>
+<h2 id="时间轴工具的概要介绍">时间轴工具的概要介绍</h2><h4 id="时间轴工具有四个面板组成">时间轴工具有四个面板组成</h4><p>1.控制面板：开始录制，停止录制，以及配置在录制过程中获取那些信息。<br>2.概要面板：页面性能的信息高度概括，更详细的信息在下面展示。<br>3.火焰图：CPU堆栈跟踪的可视化界面。在你的火焰图上你看看到一到三个点，垂直的线；蓝色的线代表DOMContentLoaded事件（作者认为：DOMContentLoade触发，即页面文档完全加载并解析完毕之后,会触发DOMContentLoaded事件），绿色代表第一次渲染完成，红色代表页面开始渲染的时间点，红色代表load事件（作者认为：触发load事件，整个页面完全加载完毕）。<br>4.详细面板：当一个事件被选中时，这里会显示关于此事件的详细信息，如果你没有选择具体的事件，那么这里显示的是大概的一个时间。</p>
+<p><img src="/image/timeline-annotated.png" alt="timeline-annotated"></p>
+<h3 id="概要面板">概要面板</h3><blockquote>
+<p>概要面板由三个图形组成</p>
+</blockquote>
+<p>1.FPS，每秒钟帧数，绿色的块越高，表示FPS越高；FPS图形上方的红色区域代表长帧，这可能是JANK（卡顿）是很好的替换。<br>2.CPU，CPU资源，这个表格显示了什么事件类型占用CPU资源。<br>3.NET，没个彩色块代表一种资源，指示条越长证明获取资源花费的时间越长。各个指示条的较亮部分表示资源下载的等待时间（请求发出到资源第一个字节开始下载，这段时间），较深的颜色部分代表开始下载到下载完成的时间。</p>
+<p><img src="/image/overview-annotated.png" alt="overview-annotated"></p>
+<blockquote>
+<p>各颜色条代表的代码如下：HTML是蓝色，javascript是黄色，CSS饰紫色，媒体资源是绿色，其他资源是灰色。</p>
+</blockquote>
+<h2 id="做一个纪录">做一个纪录</h2><p>为了纪录页面加载的情况，首先打开时间轴面板，打开想记录的页面并且重新刷新页面。时间轴面板自动纪录刷新页面。</p>
+<p>纪录一个交互页面的情况，打开时间轴面板，然后按下左上角的灰色圆圈按钮，或者按下键盘快捷键command+e(Mac)，ctrl+e(windows/Linux)。在录制的过程中这个按钮变成红色，再次按下录制按钮或者按下快捷键停止本次录制。</p>
+<h3 id="录制过程中的提示">录制过程中的提示</h3><p>1.尽可能的确保录制的比较短，录制的越短普遍容易分析。<br>2.避免不必要的动作（操作），避免一些不必要的操作（鼠标点击，网络加载等）这些是和你的纪录和分析是无关的；例如你想记录点击登陆按钮以后发生了什么，你不应该滚动页面，加载图片等等。<br>3.禁止浏览器缓存，当纪录网络情况时，这是一个好主意。<br>4.禁止扩展，Chrome extensions can add unrelated noise to Timeline recordings of your application. Open a Chrome window in incognito mode, or create a new Chrome user profile to ensure that your environment has no extensions.</p>
+<h2 id="查看详细记录">查看详细记录</h2><p>当你选择火焰表中的某一个结果时，详细窗口中就会显示关于此结果的详细信息。</p>
+<p><img src="/image/details-pane.png" alt="details-pane"></p>
+<p>某些选项卡，就像Summary，展示当前所有结果类型。其他选项卡只适合某些结果类型；可以查阅每个时间轴上的结果的详细信息。</p>
+<h2 id="搜索记录">搜索记录</h2><p>当你查找结果类型时，可能想查看某一个结果类型；如：查看所有Parse HTML结果类型。<br>按下Command+f(Mac),ctrl+f(windows/Linux)，就会出现搜索输入框；输入你想查找的结果类型，例如：Event。<br>此搜索栏只适合当前选定范围之内的时间内，所有时间以外的结果都不会显示在结果里面。<br>向上向下移动箭头可以按顺序浏览结果，第一个结果是所选时间段最早的，最后一个是所选时间段最晚的；每次向上向下移动，都可以在火焰表中查看此结果的详细信息。</p>
+<p><img src="/image/find-toolbar.png" alt="find-toolbar"></p>
+<h2 id="放大时间轴的部分">放大时间轴的部分</h2><p>你可以放大某个记录的一部分，使得分析更佳容易；你可以使用概要窗口放大记录的一部分，在火焰表中会自动匹配相同的部分。</p>
+<p><img src="/image/zoom.png" alt="zoom"></p>
+<p>你可以在概要时间轴中用鼠标拖动；<br>也可以是实用鼠标拖动灰色的条。</p>
+<p>以前你可以通过键盘的W,S,A,D来进行操作。</p>
+<h2 id="保存和载入记录">保存和载入记录</h2><p>你可以打开概要或者火焰表，右键单击选择相关选项。</p>
+<p><img src="/image/save-open.png" alt="save-open"></p>
 
       
     </div>
@@ -218,18 +244,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/15/初步理解CDN/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          初步理解CDN
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/29/随便说说line-height/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">随便说说line-height</div>
+    <a href="/2016/03/15/初步理解CDN/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初步理解CDN</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -258,7 +275,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="实现等高布局方法" data-title="实现等高布局的方法" data-url="http://yoursite.com/2016/02/02/实现等高布局方法/"></div>
+	<div class="ds-thread" data-thread-key="如何时间轴工具" data-title="chrome调试工具之如何使用时间轴工具" data-url="http://yoursite.com/2016/03/16/如何时间轴工具/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
