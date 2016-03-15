@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>高性能建站之前端优化 | Black</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="绪言A 前端性能的重要性在对静态资源进行缓存（如：js，css）以后，下载网HTML以后有一个空白时间段，这是因为浏览器要对HTML和缓存的js，css进行解析；很多HTPP请求是并发进行的，是因为多个域名的原因；在请求js脚本时不会发生并发请求，是因为加载动态脚本会阻塞其他HTTP请求；
+大部分时间都浪费在请求web组件上；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能建站之前端优化">
+<meta property="og:url" content="http://yoursite.com/2016/03/16/高性能建站笔记之前端性能优化/index.html">
+<meta property="og:site_name" content="Black">
+<meta property="og:description" content="绪言A 前端性能的重要性在对静态资源进行缓存（如：js，css）以后，下载网HTML以后有一个空白时间段，这是因为浏览器要对HTML和缓存的js，css进行解析；很多HTPP请求是并发进行的，是因为多个域名的原因；在请求js脚本时不会发生并发请求，是因为加载动态脚本会阻塞其他HTTP请求；
+大部分时间都浪费在请求web组件上；">
+<meta property="og:updated_time" content="2016-03-15T16:26:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高性能建站之前端优化">
+<meta name="twitter:description" content="绪言A 前端性能的重要性在对静态资源进行缓存（如：js，css）以后，下载网HTML以后有一个空白时间段，这是因为浏览器要对HTML和缓存的js，css进行解析；很多HTPP请求是并发进行的，是因为多个域名的原因；在请求js脚本时不会发生并发请求，是因为加载动态脚本会阻塞其他HTTP请求；
+大部分时间都浪费在请求web组件上；">
+  
+    <link rel="alternative" href="/atom.xml" title="Black" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/header.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Black</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/blackmans/blackmans.github.io" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/1731121667/home?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="mailto:940570960@qq.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DNS/" style="font-size: 15px;">DNS</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/border/" style="font-size: 10px;">border</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/encodeURI/" style="font-size: 10px;">encodeURI</a> <a href="/tags/encodeURIComponent/" style="font-size: 10px;">encodeURIComponent</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/line-height/" style="font-size: 20px;">line-height</a> <a href="/tags/margin/" style="font-size: 10px;">margin</a> <a href="/tags/timeline/" style="font-size: 10px;">timeline</a> <a href="/tags/vertical-align/" style="font-size: 15px;">vertical-align</a> <a href="/tags/优化/" style="font-size: 10px;">优化</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/等高/" style="font-size: 10px;">等高</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我，读书在江苏师范大学，工作现在去哪网，一个会做设计的前端！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Black</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/header.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Black</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/blackmans/blackmans.github.io" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/1731121667/home?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="mailto:940570960@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-高性能建站笔记之前端性能优化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/16/高性能建站笔记之前端性能优化/" class="article-date">
+  	<time datetime="2016-03-15T16:26:28.000Z" itemprop="datePublished">2016-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      高性能建站之前端优化
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/优化/">优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能/">性能</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="绪言A_前端性能的重要性">绪言A 前端性能的重要性</h2><p>在对静态资源进行缓存（如：js，css）以后，下载网HTML以后有一个空白时间段，这是因为浏览器要对HTML和缓存的js，css进行解析；<br>很多HTPP请求是并发进行的，是因为多个域名的原因；<br>在请求js脚本时不会发生并发请求，是因为加载动态脚本会阻塞其他HTTP请求；</p>
+<p>大部分时间都浪费在请求web组件上；<br><a id="more"></a></p>
+<h2 id="绪言B_HTTP">绪言B HTTP</h2><p>浏览器和web服务器都支持压缩的话就可以各自设置压缩；<br>Accept-Encoding和Content-Encoding</p>
+<p>If-Modified-Since判断客户端缓存是否过期，其值是根据相应里面的Last-Modified的值进行设置的；<br>告诉服务器：‘这个文件的最后修改时间是……，我们可否使用’</p>
+<p>Expires 设置过期时间</p>
+<p>Connection:keep-alive 持久链接</p>
+<h2 id="一_减少HTTP请求（首次进入网站）">一 减少HTTP请求（首次进入网站）</h2><p>图片地图 image map，一张图片上划分多个超链接，而不是每张小图标对应各自的链接；<br>雪碧图 CSS Sprites</p>
+<blockquote>
+<p>注：图片合并减少了HTTP请求，同样合并后的图片是比合并之前要小的；主要是因为减少了颜色表，图片信息等。</p>
+</blockquote>
+<p>内联图片<br>data: [资源类型] [编码方式] [编码后的数据]<br>1.没有HTTP请求；<br>2.不仅适用于img，他会适合所有需要URL的地方；</p>
+<p>1.此方法会增加文件的大小，那么本身编码后的数据也是有大小限制的；<br>2.IE7以及一下并不支持这种方式；</p>
+<p>合并HTML和CSS</p>
+<h2 id="二_内容发布系统_CDN">二 内容发布系统 CDN</h2><p>是一组分布在多个地理位置的的服务器，更加高效的向用户发布内容；</p>
+<p>1.如果web服务器离用户的距离越近，那么HTTP请求相应的时间就越短；同样CDN可以选择相应时间最短的服务器响应用户请求；<br>2.在请求一个网站是只有10%－20%的时间是花费在请求HTML结构上，其余的时间都花费在下载其他组建上，如：图片，CSS，JS等资源上；</p>
+<p>结合以上两个原因，我们应该将web组件放在CDN上，进行分布存放；<br>CDN服务器还具有备份，缓存，扩展存储的功能；</p>
+<p>CND的缺点：<br>相应时间受制于CDN服务（服务器性能下降，直接影响到你的网站）甚至是你的竞争对少，因为所有的用户是共享CDN服务器组的；<br>修改一些HTTP相应头不能由自己完成，而是通过CDN提供商；</p>
+<p>CDN的网络架构主要分为中心和边缘两个部分：<br>中心服务器主要负责DNS解析和全局负载均衡；<br>边缘服务器的高速缓存负责存储从客户源服务器获取的资源，并提供给本地用户访问</p>
+<p>过程：<br>1.浏览器输入获取资源的域名<br>2.通过域名解析，向中心服务器发起请求；<br>3.中心服务器通过负载均衡等规则，将最适合的边缘服务器IP发给浏览器<br>4.浏览器向新的边缘服务器发起请求，边缘服务器首先搜索自己的缓存是否存在资源，有则返回，否则向原始服务器请求；<br>5.边缘服务器将请求的资源放入自己的高速缓存</p>
+<p>例子：<br><a href="http://stevesouders.com/hpws/ex-cdn.php" target="_blank" rel="external">http://stevesouders.com/hpws/ex-cdn.php</a><br><a href="http://stevesouders.com/hpws/ex-nocdn.php" target="_blank" rel="external">http://stevesouders.com/hpws/ex-nocdn.php</a></p>
+<h2 id="三_添加Expires头">三 添加Expires头</h2><p>web服务器设置Expires，告知此次请求在规定时间之前都使用浏览器缓存；<br>Expires的问题时，某些情况下可能服务器返回的时间和客户端的时间不一致；<br>如果日期到期还得更新新的日期；</p>
+<p>Cahce-Control: max-age=3600<br>max-age设置的是从请求开始后的一个时间段，就是多长一段时间以后缓存失效；<br>这就解决了客户端和服务端时间不一致的问题，同时也避免了时间到期重新设置时间的问题；</p>
+<blockquote>
+<p>注：如果max-age和Expires同时使用的话，前者会重写后者；后者HTTP1.0就已经支持，而前者HTTP1.1才支持；<br>注：无论使用这两种的那种方法，都会使得在一个时间段内不会去请求服务器的资源，即使这个资源在服务器上已经更新；这是我们就可以通过修改文件名的方式，重新请求新的资源；</p>
+</blockquote>
+<h2 id="四_压缩组件">四 压缩组件</h2><p>Accept-Encoding和Content-Encoding，前者是浏览器请求使用压缩，后者是服务器响应使用一种符合的方式压缩；</p>
+<p>压缩所带来的成本，服务器需要额外的CPU来进行压缩；而客户端则需要耗费时间解压缩；<br>一般使用Gzip压缩，一般可以压缩掉70%；</p>
+<p>当浏览器经过代理访问服务器时，压缩和缓存就不叫麻烦啦；当一个不支持压缩的浏览器发来请求，这时代理没有缓存，所以将请求转发给服务器得到最新的数据并且缓存；第二次又来了一个浏览器支持缓存的请求，这时代理已经有缓存啦，而浏览器得到的却是没有压缩过的缓存；反之则更严重。<br>解决此问题的方法就是，在相应头中设置Vary: Accept-Encoding这就使代理分别缓存压缩和为压缩的；</p>
+<h2 id="五_将样式表放在顶部">五 将样式表放在顶部</h2><p>在IE浏览器特定情况下：<br>页面逐渐呈现，浏览器为了防止样式变化造成页面的重绘，在样式没有加载完成的时候，不会呈现页面；<br>而且页面是从上往下下载的；<br>所以如果将样式放在底部就会出现白屏的现象。</p>
+<p>将css放在顶部引入即可解决</p>
+<p>IE浏览器等到样式加载完成后，才呈现页面的原因是，如果页面在呈现完毕以后，又去加载最后的样式表，恰好此样式表又修改了页面的样式，会出现闪烁现象；<br>例子：<a href="http://stevesouders.com/hpws/css-fouc.php" target="_blank" rel="external">http://stevesouders.com/hpws/css-fouc.php</a></p>
+<p>其实，将样式放在浏览器底部，无论浏览器怎么解析都要承担这两种的一种问题；<br>所以将样式放在页面的顶部，就可以完美解决这两个问题；</p>
+<h2 id="六_将js脚本放在页面底部">六 将js脚本放在页面底部</h2><p>css是下载不完页面不会呈现（IE），而js是下载的时候会阻塞页面呈现，同时js的下载还阻塞其他组件的下载；</p>
+<p>规范规定从一个主机名同时可以下载两个文件（不是所有浏览器都是两个）；<br>可以通过增加主机名来增大并行数量，并不是主机名越多越好，受到带宽，机器CPU等影响；</p>
+<p>下载js脚本时，并行下载是被禁止的，即使是不同主机名；<br>这样做的原因：<br>保证js脚本的执行顺序，假如有依赖关系，也不会出现错误</p>
+<p>defer和async的异同<br>相同是都适用于外链脚本，脚本下载时不会阻塞其他脚本的下载，也不会阻塞页面的渲染。<br>不同是defer是等页面渲染完成以后，才会去执行脚本并且可以满足脚本的顺序；而async是脚本一旦下载完成就立即执行，且不能保证脚本顺序。</p>
+<h2 id="七_避免CSS表达式">七 避免CSS表达式</h2><p>CSS表达式的更新频率过多；</p>
+<h2 id="八_使用外部的JS和CSS">八 使用外部的JS和CSS</h2><p>内链的速度要快于外链，因为HTTP请求更少；</p>
+<p>外部链接有利于缓存，但是缓存有取决于以下几点：<br>1.网站的查看量；<br>2.网站空缓存和完整缓存的比例<br>3.js和css的重复使用率</p>
+<h2 id="九_减少DNS查找">九 减少DNS查找</h2><p>通过keep-alive和更少的主机名来减少DNS解析；<br>建议一个网站有2-4个主机名</p>
+<h2 id="十_精简js">十 精简js</h2><p>使用工具精简脚本JSMin</p>
+<h2 id="十一_避免重定向">十一 避免重定向</h2><p>301永久性重定向：对SEO更加的友好，搜索引擎会认为之前的域名已经废弃而启用新的域名，这用搜索引擎会将新的内容抓取到新的域下<br>302暂时性重定向：搜索引擎会认为新的域名只是暂时的，所以会将新的内容抓取到旧的域名下；</p>
+<h2 id="十二_移除重复脚本">十二 移除重复脚本</h2><p>两个问题：重复的HTTP请求，重复的代码执行</p>
+<h2 id="十三_配置Etag">十三 配置Etag</h2><p>Expires使用设置过期时间，Cahce-Control: max-age=3600设置一个时间段<br>If-Modified-Since是与后端相应的Last-Modified比较</p>
+<h2 id="其他">其他</h2><p>减小cookie体积；<br>http请求相同域名下时，都会带上此域名下的cookie，所以可以增加域名，减少带不必要的cookie，从而减小HTTP亲求体积；</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/16/如何时间轴工具/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">chrome调试工具之如何使用时间轴工具（翻译）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="高性能建站笔记之前端性能优化" data-title="高性能建站之前端优化" data-url="http://yoursite.com/2016/03/16/高性能建站笔记之前端性能优化/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Black
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
