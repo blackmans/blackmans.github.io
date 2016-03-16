@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>chrome调试工具之Network测量资源的加载时间（翻译） | Black</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="实用Network面板可以测量你的站点网络加载情况。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chrome调试工具之Network测量资源的加载时间（翻译）">
+<meta property="og:url" content="http://yoursite.com/2016/03/16/chrome调试工具之network测量资源的加载时间/index.html">
+<meta property="og:site_name" content="Black">
+<meta property="og:description" content="实用Network面板可以测量你的站点网络加载情况。">
+<meta property="og:image" content="http://yoursite.com/image/network-panel.png">
+<meta property="og:image" content="http://yoursite.com/image/panes.png">
+<meta property="og:image" content="http://yoursite.com/image/domcontentloaded.png">
+<meta property="og:image" content="http://yoursite.com/image/load.png">
+<meta property="og:image" content="http://yoursite.com/image/network-headers.png">
+<meta property="og:image" content="http://yoursite.com/image/timing-tab.png">
+<meta property="og:image" content="http://yoursite.com/image/timeline-view-hover.png">
+<meta property="og:image" content="http://yoursite.com/image/network-headers.png">
+<meta property="og:image" content="http://yoursite.com/image/view-url-encoded.png">
+<meta property="og:image" content="http://yoursite.com/image/preview-png.png">
+<meta property="og:image" content="http://yoursite.com/image/response-json.png">
+<meta property="og:image" content="http://yoursite.com/image/cookies.png">
+<meta property="og:image" content="http://yoursite.com/image/timeline-sort-fields.png">
+<meta property="og:image" content="http://yoursite.com/image/multiple-content-type-filters.png">
+<meta property="og:image" content="http://yoursite.com/image/resource-name-filtering.png">
+<meta property="og:image" content="http://yoursite.com/image/larger-than.png">
+<meta property="og:image" content="http://yoursite.com/image/filter-autocomplete.png">
+<meta property="og:image" content="http://yoursite.com/image/copy-save-menu.png">
+<meta property="og:image" content="http://yoursite.com/image/large-resource-rows.png">
+<meta property="og:image" content="http://yoursite.com/image/add-remove-columns.png">
+<meta property="og:updated_time" content="2016-03-16T10:22:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="chrome调试工具之Network测量资源的加载时间（翻译）">
+<meta name="twitter:description" content="实用Network面板可以测量你的站点网络加载情况。">
+  
+    <link rel="alternative" href="/atom.xml" title="Black" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/header.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Black</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/blackmans/blackmans.github.io" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/1731121667/home?topnav=1&wvr=6" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="mailto:940570960@qq.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DNS/" style="font-size: 15px;">DNS</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/border/" style="font-size: 10px;">border</a> <a href="/tags/chrome/" style="font-size: 15px;">chrome</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/encodeURI/" style="font-size: 10px;">encodeURI</a> <a href="/tags/encodeURIComponent/" style="font-size: 10px;">encodeURIComponent</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/line-height/" style="font-size: 20px;">line-height</a> <a href="/tags/margin/" style="font-size: 10px;">margin</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/timeline/" style="font-size: 10px;">timeline</a> <a href="/tags/vertical-align/" style="font-size: 15px;">vertical-align</a> <a href="/tags/优化/" style="font-size: 10px;">优化</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/等高/" style="font-size: 10px;">等高</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/翻译/" style="font-size: 15px;">翻译</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我，读书在江苏师范大学，工作现在去哪网，一个会做设计的前端！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Black</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/header.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Black</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/blackmans/blackmans.github.io" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/1731121667/home?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="mailto:940570960@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-chrome调试工具之network测量资源的加载时间" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/16/chrome调试工具之network测量资源的加载时间/" class="article-date">
+  	<time datetime="2016-03-16T10:22:56.000Z" itemprop="datePublished">2016-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chrome调试工具之Network测量资源的加载时间（翻译）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/network/">network</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>实用Network面板可以测量你的站点网络加载情况。</p>
+</blockquote>
+<a id="more"></a>
+<p><img src="/image/network-panel.png" alt="network-panel"></p>
+<p>Network面板记录了页面中关于每条网络请求的信息，包括时间数据，HTTP请求和响应头信息，cookie等等更多。</p>
+<h2 id="Network面板的概览">Network面板的概览</h2><h5 id="Networkyou下面的五个面板组成：">Networkyou下面的五个面板组成：</h5><h4 id="时间轴工具有四个面板组成">时间轴工具有四个面板组成</h4><p>1.控制面板：使用这些选项来控制Network面板的外观和功能。<br>2.过滤面板：使用这些选项可以控制展示在请求列表中的请求。小提示：键盘按下Command键，并且点击过滤选项，在同一次过滤中使用多个过滤条件。<br>3.概要面板：这里的图形代表资源取回后的时间表，如果你看到有些彩色条是垂直堆叠分布的，这意味着这些资源是被同时请求回来的。<br>4.请求列表面板：这里列出了所有被请求回来的资源。默认这些资源是按照时间顺序排列的，最早的排列在最上面。点击一个资源的名称区域以获取关于此资源的信息。小提示：点击任何列表的头部，都可以添加新的列或者删除任何一列，但是出去timeline不能删除。<br>5.摘要面板：这里一目了然的显示了当前列表的数量，总数量，加载所需的时间。</p>
+<p><img src="/image/panes.png" alt="panes"></p>
+<h4 id="请求列表默认展示了一下列，当然你可以自己添加或删除">请求列表默认展示了一下列，当然你可以自己添加或删除</h4><ul>
+<li>Name 资源的名称</li>
+<li>Status HTTP状态码</li>
+<li>Type 请求资源的类型</li>
+<li>Initiator 发起资源请求的对象或者进程，可能是下列的某一个：<br>  1.Parser：chrome的解析器发起的请求。<br>  2.Redirect：一个HTTP重定向发起的请求。<br>  3.Script：script发起的请求。<br>  4.Other：一些其他的进程或者活动发起的请求，如用户通过连接导航到页面，或者用户直接在地址栏输入地址。</li>
+<li>Size：资源的大小，包括响应头（通常几百个字节），再加上响应主题的大小。</li>
+<li>Time：包括从请求开始响应到最后一个字节下载完毕的时间。</li>
+<li>Timeline：时间轴通过可视化瀑布流图展示所有请求数据，点击每一栏的头部区域可以按照此列来对数据进行排序。</li>
+</ul>
+<h2 id="录制网络请求">录制网络请求</h2><p>默认情况下，在Network面板打开的时候，开发者工具会记录所有的网络活动。</p>
+<p>你能通过录制按钮告诉开发者工具是否录制；当按钮是红色的时候表示正在录制中，当按钮是灰色的时候表示没有在录制。你可以通过按钮控制也可以通过快捷键控制Command+e。</p>
+<h2 id="查看DOMContentLoaded和Load事件信息">查看DOMContentLoaded和Load事件信息</h2><blockquote>
+<p>Network面板标注了这两个事件。</p>
+</blockquote>
+<p>DOMContentLoaded是在页面初始节点解析完成时触发，在Network面板中有两个地方显示此事件：<br>1.在概览面板中蓝色的垂直线就代表此事件。<br>2.在底部摘要面板中也可以找到蓝色的文字标注。</p>
+<p><img src="/image/domcontentloaded.png" alt="domcontentloaded"></p>
+<p>Load事件触发是在页面完全加载完成的时候触发，在Network中三个地方显示此事件：<br>1.在概要面板中红色的垂直线代表此事件。<br>2.在请求列表面板中也是红色的垂直线代表。<br>3.在摘要面板中红色的文字标注。</p>
+<p><img src="/image/load.png" alt="load"></p>
+<h2 id="查看单个资源的详情">查看单个资源的详情</h2><p>点击某一资源的名称（Name下面的部分）来查看关于此资源的更多信息。</p>
+<p>选项卡的个数是由你选择资源的类型决定的，但是以下四个是通用的：</p>
+<p>Headers. HTTP headers associated to the resource.<br>Preview. Previews of JSON, image, and text resources.<br>Response. HTTP response data (if any).<br>Timing. A granular breakdown of the request lifecycle for the resource.</p>
+<ul>
+<li>Headers：资源HTTP请求头的相关信息</li>
+<li>预览JSON，image，文本资源</li>
+<li>HTTP相应数据（如果有的话）</li>
+<li>该资源请求生命周期的详细分析</li>
+</ul>
+<p><img src="/image/network-headers.png" alt="network-headers"></p>
+<h3 id="查看Network的timing">查看Network的timing</h3><p>点击timing查看单个资源请求生命周期的详细分析。</p>
+<p>展示了生命周期内以下类别花费时间的多少：</p>
+<ul>
+<li>Queuing</li>
+<li>Stalled</li>
+<li>Request/Response</li>
+<li>Request sent</li>
+<li>Waiting (Time to first byte (TTFB))</li>
+<li>Content Download</li>
+</ul>
+<p><img src="/image/timing-tab.png" alt="timing-tab"></p>
+<p>你在请求列表面板中，将鼠标移动到Timeline选项上，也能看到同样的数据。</p>
+<p><img src="/image/timeline-view-hover.png" alt="timeline-view-hover"></p>
+<h3 id="查看HTTP头">查看HTTP头</h3><p>点击headers展示此资源的头部信息，这里展示了此资源的请求URL，HTTP请求方式，HTTP状态码；另外，还列出了请求和响应头，和他们的值以及请求参数。</p>
+<p><img src="/image/network-headers.png" alt="network-headers"></p>
+<p>你也能通过view source和view parsed链接，查看你想要格式。</p>
+<p><img src="/image/view-url-encoded.png" alt="view-url-encoded"></p>
+<h3 id="预览一个资源">预览一个资源</h3><p>点击Preview查看资源的预览，Preview可能展示有用或者没用的信息，这取决于你的选择的资源。</p>
+<p><img src="/image/preview-png.png" alt="preview-png"></p>
+<h3 id="查看HTTP_response内容">查看HTTP response内容</h3><p>点击Response查看资源的预览，Response可能展示有用或者没用的信息，这取决于你的选择的资源。</p>
+<p><img src="/image/response-json.png" alt="response-json"></p>
+<h3 id="查看cookie">查看cookie</h3><p>点击cookie查看cookie，这里只有在请求过程中有cookie传播时，才会显示。</p>
+<p>下面是一些字段的描述：</p>
+<ul>
+<li>Name. 名称</li>
+<li>Value. 值</li>
+<li>Domain. cookie所属的域（作者：只要在设置域名下的域名都可以访问此cookie）</li>
+<li>Path. cookie所在的路径（作者：只有此路径或者此路径下一级别的链接能访问此cookie）</li>
+<li>Expires / Max-Age. 设置cookie的过期时间（作者：前者未来的一个时间点，后者是在给定的时间段后）</li>
+<li>Size. 大小</li>
+<li>HTTP. Indicates that the cookie should only be set by the browser in the HTTP request, and cannot be accessed with JavaScript.</li>
+<li>Secure. 只能在安全连接（作者：指HTTPS）上传输</li>
+</ul>
+<p><img src="/image/cookies.png" alt="cookies"></p>
+<h2 id="请求列表的排序">请求列表的排序</h2><p>默认请求列表是按照请求开始的时间先后排序的，最先开始的排在最前面。点击每一项的头部记忆按照此项排序，再次点击倒序。</p>
+<p>时间轴选项和其他选项是不一样的，当你点击时，它出现一个排序用的下拉菜单选项：</p>
+<ul>
+<li>Timeline 请求的开始时间，这也是默认的排序方式，和Start Time是一样的。</li>
+<li>Start Time 和默认是一样的。</li>
+<li>Response Time 按照请求的响应时间排序。</li>
+<li>End Time 按照请求的完成时间排序。</li>
+<li>Duration 按照加载资源总时间排序，可以方便查看那个请求花费时间最长</li>
+<li>Latency 按照请求开始的到响应开始之间的时间排序，方便查看第一个字节返回花费时间最长的资源。</li>
+</ul>
+<p><img src="/image/timeline-sort-fields.png" alt="timeline-sort-fields"></p>
+<h2 id="请求列表过滤">请求列表过滤</h2><p>Network面板提供了多重过滤来展示资源。点击左上角的第四个按钮显示或隐藏过滤面板。点击了某一个过滤按钮就会只显示你过滤的资源。</p>
+<blockquote>
+<p>使用Command（Mac）或者ctrl（Windows）点击多选过滤条件。</p>
+</blockquote>
+<p><img src="/image/multiple-content-type-filters.png" alt="multiple-content-type-filters"></p>
+<p>过滤输入框区域是一个强大的模糊过滤，你如果随便如果一些字符串，他会去匹配资源的名称。<br>这里也支持其他的方式过滤，按照不同的属性过滤资源，例如使用larger than关键字。</p>
+<p><img src="/image/resource-name-filtering.png" alt="resource-name-filtering"></p>
+<ul>
+<li>domain. 仅仅显示此域下的资源，你可以使用（<em>）来代表多个域，如：</em>.com代表只展示来自*.com域下。开发者工具提供了自动补全的下拉菜单。</li>
+<li>has-response-header. 展示响应头包含特定内容的资源，开发者工具同样会自动补全。</li>
+<li>is. Use is:running to find WebSocket resources.</li>
+<li>larger-than. 展示大于指定指的资源，1000代表时1k。</li>
+<li>method. 展示对应请求方式的资源，同样会自动补全。</li>
+<li>mime-type. 展示对应文件MIME类型的资源，同源不全。</li>
+<li>mixed-content. Show all mixed content resources (mixed-content:all) or just the ones that are currently displayed (mixed-content:displayed).</li>
+<li>scheme. 展示制定scheme的资源。</li>
+<li>set-cookie-domain. 展示设置指定domain属性的资源，补全。</li>
+<li>set-cookie-name. 展示设置对应name的资源，补全。</li>
+<li>set-cookie-value. 展示设置对应值的资源，补全。</li>
+<li>status-code. 展示设置对应状态码的资源，补全。</li>
+</ul>
+<p><img src="/image/larger-than.png" alt="larger-than"></p>
+<p>触发补全需要加上后面的冒号，如：domain:。</p>
+<p><img src="/image/filter-autocomplete.png" alt="filter-autocomplete"></p>
+<h2 id="复制，保存，清除网络信息">复制，保存，清除网络信息</h2><p>在每一条资源上右键单击即可出线菜单选项。这里没有展开翻译。</p>
+<p><img src="/image/copy-save-menu.png" alt="copy-save-menu"></p>
+<h2 id="自定义Network面板">自定义Network面板</h2><p>默认请求列表展示的是小行（作者：就是高度小，信息少）。你可以通过Use large resource rows来设置成高行。</p>
+<p><img src="/image/large-resource-rows.png" alt="large-resource-rows"></p>
+<p>添加和删除栏目。在栏目头部右键出现菜单，删除或添加。</p>
+<p><img src="/image/add-remove-columns.png" alt="add-remove-columns"></p>
+<p>默认上次的请求纪录是被丢弃的，你可以勾选Preserve log来保留。</p>
+<p>原链接：<a href="https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/resource-loading" target="_blank" rel="external">https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/resource-loading</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/16/如何时间轴工具/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">chrome调试工具之Timeline如何使用时间轴工具（翻译）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="chrome调试工具之network测量资源的加载时间" data-title="chrome调试工具之Network测量资源的加载时间（翻译）" data-url="http://yoursite.com/2016/03/16/chrome调试工具之network测量资源的加载时间/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Black
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
