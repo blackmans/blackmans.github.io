@@ -11,7 +11,8 @@
 <meta property="og:url" content="http://yoursite.com/2016/03/16/chrome开发者工具之Network下时间生命周期/index.html">
 <meta property="og:site_name" content="Black">
 <meta property="og:description" content="资源是通过网络聚集的，这个阶段的理解是至关重要的。这为固定加载问题奠定了基础。">
-<meta property="og:updated_time" content="2016-03-16T11:28:44.000Z">
+<meta property="og:image" content="http://yoursite.com/image/timing-tab.png">
+<meta property="og:updated_time" content="2016-03-16T11:44:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chrome开发者工具之Network下时间生命周期（翻译）">
 <meta name="twitter:description" content="资源是通过网络聚集的，这个阶段的理解是至关重要的。这为固定加载问题奠定了基础。">
@@ -166,7 +167,7 @@
   
     <div class="article-meta">
       <a href="/2016/03/16/chrome开发者工具之Network下时间生命周期/" class="article-date">
-  	<time datetime="2016-03-16T11:28:44.000Z" itemprop="datePublished">2016-03-16</time>
+  	<time datetime="2016-03-16T11:44:36.000Z" itemprop="datePublished">2016-03-16</time>
 </a>
     </div>
   
@@ -203,13 +204,20 @@
 <p>资源是通过网络聚集的，这个阶段的理解是至关重要的。这为固定加载问题奠定了基础。</p>
 </blockquote>
 <a id="more"></a>
-<p>由于资源都是通过网络获取的，它们都展示了不同的生命周期。Network使用🈴️Resource Timing API一样的，都提供给开发者适用。<br>Resource Timing API提供了收到每个个体花费的时间的多个阶段详情。</p>
+<p>由于资源都是通过网络获取的，它们都展示了不同的生命周期。Network使用Resource Timing API一样的，都提供给开发者适用。<br>Resource Timing API提供了收到每个个体花费的时间的多个阶段详情。</p>
 <blockquote>
 <p>作者：w3c在window下面提供了performance对象，对象里面有timing对象，里面存储了相关的信息。</p>
 </blockquote>
 <p>以下是生命周期内的主要阶段：</p>
-<h2 id="查看开发者工具">查看开发者工具</h2><p>你有三种方式查看一个给定的资源的全部时间轴信息：<br><em>
-</em><br>*</p>
+<h2 id="查看开发者工具">查看开发者工具</h2><p>你有三种方式查看一个给定的资源的全部时间轴信息：</p>
+<ul>
+<li>鼠标移动到timing栏下，这将在当前条目下弹出弹层显示所有的事件数据。</li>
+<li>点击任何一条资源，进入timing下。</li>
+<li>通过Resource Timing API</li>
+</ul>
+<p><img src="/image/timing-tab.png" alt="timing-tab"></p>
+<h3 id="Queuing">Queuing</h3><p>如果这样代表表明请求是排队的：</p>
+<p>原链接：<a href="https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/understanding-resource-timing" target="_blank" rel="external">https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/understanding-resource-timing</a></p>
 
       
     </div>
@@ -219,18 +227,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/16/chrome调试工具之network测量资源的加载时间/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          chrome调试工具之Network测量资源的加载时间（翻译）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/16/如何时间轴工具/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">chrome调试工具之Timeline如何使用时间轴工具（翻译）</div>
+    <a href="/2016/03/16/chrome调试工具之network测量资源的加载时间/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">chrome调试工具之Network测量资源的加载时间（翻译）</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
